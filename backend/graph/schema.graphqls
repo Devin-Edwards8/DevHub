@@ -1,0 +1,15 @@
+type Query {
+
+}
+
+type Task {
+
+}
+
+type newTask {
+
+}
+
+type Mutation {
+    createTask(input NewTask!): Task
+}
