@@ -1,0 +1,28 @@
+type Query {
+    tasks: [Task]!
+}
+
+type Task {
+    id: ID!
+    title: String
+    status: Status
+    priority: Priority
+}
+
+enum Status {
+    IN_PROGRESS
+    DONE
+    NOT_STARTED
+    STUCK
+}
+
+enum Priority {
+    LOW
+    MEDIUM
+    HIGH
+    CRITICAL
+}
+
+type Mutation {
+    createTask(id: ID!): Task
+}
