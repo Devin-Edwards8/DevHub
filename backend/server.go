@@ -10,6 +10,7 @@ import (
 	"github.com/99designs/gqlgen/graphql/handler/lru"
 	"github.com/99designs/gqlgen/graphql/handler/transport"
 	"github.com/99designs/gqlgen/graphql/playground"
+	db "github.com/Devin-Edwards8/DevHub/database"
 	"github.com/Devin-Edwards8/DevHub/graph"
 	"github.com/vektah/gqlparser/v2/ast"
 )
@@ -17,6 +18,9 @@ import (
 const defaultPort = "8080"
 
 func main() {
+	db.Connect()
+	db.Migrate()
+
 	port := os.Getenv("PORT")
 	if port == "" {
 		port = defaultPort

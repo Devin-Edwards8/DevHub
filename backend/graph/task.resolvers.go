@@ -8,21 +8,33 @@ import (
 	"context"
 	"fmt"
 
+	db "github.com/Devin-Edwards8/DevHub/database"
 	"github.com/Devin-Edwards8/DevHub/graph/model"
 )
 
 // CreateTask is the resolver for the createTask field.
 func (r *mutationResolver) CreateTask(ctx context.Context, id string) (*model.Task, error) {
 	fmt.Println("Creating a Task...")
+	defaultStatus := model.StatusNotStarted
 	newTask := &model.Task{
-		ID: id,
+		ID:     id,
+		Status: &defaultStatus,
 	}
+
+	if err := db.DB.Create(newTask).Error; err != nil {
+		return nil, err
+	}
+
 	return newTask, nil
 }
 
 // Tasks is the resolver for the tasks field.
 func (r *queryResolver) Tasks(ctx context.Context) ([]*model.Task, error) {
-	return r.tasks, nil
+	var tasks []*model.Task
+	if err := db.DB.Find(&tasks).Error; err != nil {
+		return nil, err
+	}
+	return tasks, nil
 }
 
 // Mutation returns MutationResolver implementation.
