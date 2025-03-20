@@ -1,0 +1,90 @@
+:root {
+    /* colors */
+    --lightningcss-light: ;
+    --lightningcss-dark: initial;
+    color-scheme: dark;
+    --sk-bg-hue: 220;
+    --sk-fg-1: hsl(var(--sk-bg-hue),2%,90%);
+    --sk-fg-2: hsl(var(--sk-bg-hue),3%,80%);
+    --sk-fg-3: hsl(var(--sk-bg-hue),5%,65%);
+    --sk-fg-4: hsl(var(--sk-bg-hue),5%,55%);
+    --sk-fg-accent: #f96743;
+    --sk-bg-0: hsl(var(--sk-bg-hue),8%,10%);
+    --sk-bg-1: hsl(var(--sk-bg-hue),10%,12%);
+    --sk-bg-2: hsl(var(--sk-bg-hue),12%,14%);
+    --sk-bg-3: hsl(var(--sk-bg-hue),14%,16%);
+    --sk-bg-4: hsl(var(--sk-bg-hue),15%,21%);
+    --sk-bg-accent: #b32d00;
+    --sk-bg-highlight: #4d4d00;
+    --sk-border: hsl(var(--sk-bg-hue),15%,22%);
+    --shiki-color-text: #c4c1bb;
+    --shiki-token-comment: #8c8c8c;
+    --shiki-token-keyword: #57b5f4;
+    --shiki-token-function: #eab095;
+    --shiki-token-string: #ccb88f;
+    --sk-scrollbar: #ffffff4d;
+    --sk-shadow: drop-shadow(1px 2px 16px #00000080);
+
+    /* fonts */
+    --sk-font-family-ui: "Fira Sans",-apple-system,sans-serif;
+    --sk-font-family-body: Georgia,serif;
+    --sk-font-family-heading: "DM Serif Display",Georgia,serif;
+    --sk-font-family-mono: "Fira Mono",monospace;
+    --sk-font-size-h1: 5.4rem;
+    --sk-font-size-h2: 3rem;
+    --sk-font-size-h3: 2.4rem;
+    --sk-font-size-body: 1.8rem;
+    --sk-font-size-body-small: 1.6rem;
+    --sk-font-size-ui-small: 1.3rem;
+    --sk-font-size-ui-medium: 1.6rem;
+    --sk-font-size-ui-large: 3rem;
+    --sk-font-size-mono: 1.4rem;
+    --sk-line-height-body: calc(1.5*var(--sk-font-size-body));
+    --sk-line-height-body-small: calc(1.5*var(--sk-font-size-body-small));
+    --sk-font-h1: 500 var(--sk-font-size-h1)/1.2 var(--sk-font-family-heading);
+    --sk-font-h2: 500 var(--sk-font-size-h2)/1.2 var(--sk-font-family-heading);
+    --sk-font-h3: 500 var(--sk-font-size-h3)/1.2 var(--sk-font-family-heading);
+    --sk-font-body: 400 var(--sk-font-size-body)/var(--sk-line-height-body)var(--sk-font-family-body);
+    --sk-font-body-small: 400 var(--sk-font-size-body-small)/var(--sk-line-height-body-small)var(--sk-font-family-body);
+    --sk-font-ui-small: 400 var(--sk-font-size-ui-small)/1.5 var(--sk-font-family-ui);
+    --sk-font-ui-medium: 400 var(--sk-font-size-ui-medium)/1.5 var(--sk-font-family-ui);
+    --sk-font-ui-large: 400 var(--sk-font-size-ui-large)/1.5 var(--sk-font-family-ui);
+    --sk-font-mono: 400 var(--sk-font-size-mono)/1.7 var(--sk-font-family-mono);
+
+    /* organization */
+    --header-height: 6rem;
+    --sb-padding-top: 5rem;
+    --sb-padding-left: 3rem;
+    --sb-width: 28rem;
+    --sk-page-padding-top: 8rem;
+    --sk-page-padding-side: 4.8rem;
+}
+
+:root {
+    font-size: 10px;
+}
+
+main {
+    padding: var(--sk-page-padding-top) var(--sk-page-padding-side) 0 calc(var(--sb-width) + var(--sk-page-padding-side));
+    margin-top: var(--header-height);
+    max-width: calc(100vw - var(--sb-width)- calc(2 * var(--sk-page-padding-side)));
+}
+
+h1 {
+    font: var(--sk-font-h1);
+    color: var(--sk-fg-1)
+}
+
+h3 {
+    font: var(--sk-font-h3);
+    color: var(--sk-fg-1);
+}
+
+p, li {
+    font: var(--sk-font-body);
+    color: var(--sk-fg-2);
+}
+
+h1, h2, h3, p, a {
+    margin: 0;
+}
